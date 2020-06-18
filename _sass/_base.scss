@@ -20,10 +20,10 @@ hr.light {
 
 a {
     @include transition-all;
-    //color: $theme-primary;
+    color: #222;
     &:hover,
     &:focus {
-        color: darken($theme-primary, 10%);
+        color: darken(#222, 10%);
     }
 }
 
