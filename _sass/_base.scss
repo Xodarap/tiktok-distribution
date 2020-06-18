@@ -20,7 +20,7 @@ hr.light {
 
 a {
     @include transition-all;
-    color: $theme-primary;
+    //color: $theme-primary;
     &:hover,
     &:focus {
         color: darken($theme-primary, 10%);
@@ -155,7 +155,7 @@ header {
     min-height: auto;
     @include background-cover;
     background-position: center;
-    background-image: url('../img/header.jpg');
+    background-image: url('../img/joakim-honkasalo-ssvjJLB6wIw-unsplash.jpg');
     text-align: center;
     color: white;
     .header-content {
