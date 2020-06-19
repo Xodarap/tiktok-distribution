@@ -87,7 +87,9 @@
         $('#loaderHolder').show();
         var data = new FormData();
         data.append('image', $('#photo')[0].files[0]);
-        var url = 'https://tiktokhot.azurewebsites.net/api/classify?code=WKdDWUMfuFd8k/YKntvMhQC1uOTxpxGuEEOuEZ36XaRg0FidnazwNg==';
+        var username = $('#username').val();
+        var url = 'https://tiktokhot.azurewebsites.net/api/classify?code=WKdDWUMfuFd8k/YKntvMhQC1uOTxpxGuEEOuEZ36XaRg0FidnazwNg==' +
+        '&username=' + username;
         $.ajax({url: url, 
             data: data,
             type: 'POST',
