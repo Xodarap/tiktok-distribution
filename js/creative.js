@@ -45,8 +45,45 @@
     // Initialize WOW.js Scrolling Animations
     new WOW().init();
 
+    $('#photo').on('change', function(){
+        var reader = new FileReader();
+        reader.onloadend = function(event) {
+            $('#preview').attr('src', event.target.result);
+            //.css({'background-image':             'url(' + event.target.result + ')'});
+        }
+        var files = $('#photo')[0].files;
+        if(files && files.length > 0){
+            $('#preview').show();
+            reader.readAsDataURL(files[0]);
+        } 
+    })
+
+    var validate = function () {
+        var username = $('#username').val();
+        if(username.match(/^@?\S+$/) === null) {
+            $('#userError').show();
+            return false;
+        }        
+        $('#userError').hide();
+
+        var files = $('#photo')[0].files;
+        if(!files || files.length == 0){            
+            $('#photoError').show();
+            return false;
+        }
+        $('#photoError').hide();
+        return true;
+    }
+    
+    $('#photo').on('blur', validate);
+    $('#username').on('blur', validate);
+
     $('#ratingForm').submit(function(event){
         event.preventDefault();
+        if(!validate()) {
+            return;
+        }
+
         $('#loaderHolder').show();
         var data = new FormData();
         data.append('image', $('#photo')[0].files[0]);
@@ -69,18 +106,5 @@
             }
         })
     });
-
-    $('#photo').on('change', function(){
-        var reader = new FileReader();
-        reader.onloadend = function(event) {
-            $('#preview').attr('src', event.target.result);
-            //.css({'background-image':             'url(' + event.target.result + ')'});
-        }
-        var files = $('#photo')[0].files;
-        if(files && files.length > 0){
-            $('#preview').show();
-            reader.readAsDataURL(files[0]);
-        }
-    })
 
 })(jQuery); // End of use strict

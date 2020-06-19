@@ -1,32 +1,43 @@
 <header>
-    <div class="header-content">
-        <div class="header-content-inner">
-            <h1>TikTok Beautiful</h1>
-            <hr>
-            <p>Want to know how a machine learning algorithm evaluates your facial appearance?</p>
+  <div class="header-content">
+    <div class="header-content-inner">
+      <h1>TikTok Beautiful</h1>
+      <hr>
+      <p>Want to know how a machine learning algorithm evaluates your facial appearance?</p>
+
+      <div class="col-sm-5 center-input">
+        <div class="panel panel-default">
+          <div class="panel-body">
             <form id="ratingForm">
               <div class="row justify-content-md-center">
-                <div class="col-sm-3 center-input">
+                <div class="col-sm-10 center-input">
                   <div class="form-group">
                     <label for="exampleInputEmail1">TikTok Username</label>
-                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="@charlidamelio" required>
+                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
+                      placeholder="@charlidamelio" required>
                     <small id="emailHelp" class="form-text text-faded">We use this to prevent spam</small>
+                    <div class="invalid-feedback" id="userError">
+                      Please provide a valid username.
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="form-group col-sm-3 center-input">
-                    <label for="exampleFormControlFile1">Headshot photo</label>
-                    <input type="file" class="form-control-file" id="photo" required>
+                <div class="form-group col-sm-10 center-input">
+                  <label for="exampleFormControlFile1">Headshot photo</label>
+                  <input type="file" class="form-control-file" id="photo">
+                  <div class="invalid-feedback" id="photoError">
+                    Please provide a valid photo.
                   </div>
                 </div>
-                
+              </div>
+
               <div class="row">
-                <div class="center-input col-sm-3 preview-holder">
-                  <img id="preview"/>   
+                <div class="center-input col-sm-10 preview-holder">
+                  <img id="preview" />
                 </div>
               </div>
-                <div class="row">
+              <div class="row">
                 <button type="submit" class="btn btn-primary btn-xl">Submit</button>
               </div>
               <div class="row">
@@ -34,24 +45,25 @@
                   <div class="loader"></div>
                 </div>
               </div>
-              
+
               <div class="row">
                 <div class="center-input col-sm-3" id="resultsHolder">
                   <div class="panel panel-default">
                     <div class="panel-heading">
                       <h2 class="panel-title">Your Results</h2>
                     </div>
-                    <div class="panel-body" id="resultText">
-                      
-                    </div>
-                  </div>                                 
+                    <div class="panel-body" id="resultText"></div>
+                  </div>
                 </div>
               </div>
             </form>
-            
-            <hr>
-              
-            <a href="#about" class="btn btn-primary btn page-scroll">More Details</a>              
+          </div>
         </div>
+      </div>
+      
+      <hr>
+
+      <a href="#about" class="btn btn-primary btn page-scroll">More Details</a>
     </div>
+  </div>
 </header>
