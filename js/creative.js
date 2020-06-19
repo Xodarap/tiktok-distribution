@@ -112,7 +112,7 @@
                     'The algorithm gave this picture a score of ' +
                     Math.round(result['score'] * 100)/100 +
                     ' out of 5, which is at the '
-                    + result['percentile'] * 100 +
+                    + Math.round(result['percentile'] * 100) +
                     'th percentile.'
                 )
             }
