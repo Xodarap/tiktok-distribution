@@ -45,10 +45,28 @@
     // Initialize WOW.js Scrolling Animations
     new WOW().init();
 
-    $('#photo').on('change', function(){
+    var validateImage = function() {
+        var files = $('#photo')[0].files;
+        if(!files || files.length == 0){            
+            $('#photoError').show();
+            return false;
+        }
+        if(files[0].type.slice(0,6) !== 'image/'){
+            $('#photoError').show();
+            return false;        
+        }
+        $('#photoError').hide();
+        return true;
+    }
+    $('#photo').on('change', function(){        
+        if(!validateImage()){
+            return;
+        }
+
         var reader = new FileReader();
         reader.onloadend = function(event) {
             $('#preview').attr('src', event.target.result);
+
             var img = new Image();
             $(img).on('load', function(imgEvent) {
                 var ratio = img.naturalHeight / img.naturalWidth;
@@ -59,7 +77,6 @@
                 }
             });
             img.src = event.target.result;
-            //.css({'background-image':             'url(' + event.target.result + ')'});
         }
         var files = $('#photo')[0].files;
         if(files && files.length > 0){
@@ -76,13 +93,7 @@
         }        
         $('#userError').hide();
 
-        var files = $('#photo')[0].files;
-        if(!files || files.length == 0){            
-            $('#photoError').show();
-            return false;
-        }
-        $('#photoError').hide();
-        return true;
+        return validateImage();
     }
     
     $('#photo').on('blur', validate);
