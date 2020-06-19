@@ -49,6 +49,16 @@
         var reader = new FileReader();
         reader.onloadend = function(event) {
             $('#preview').attr('src', event.target.result);
+            var img = new Image();
+            $(img).on('load', function(imgEvent) {
+                var ratio = img.naturalHeight / img.naturalWidth;
+                if(ratio < 0.8 || ratio > 1.3) {
+                    $('#dimensionError').show();
+                } else {
+                    $('#dimensionError').hide();
+                }
+            });
+            img.src = event.target.result;
             //.css({'background-image':             'url(' + event.target.result + ')'});
         }
         var files = $('#photo')[0].files;
