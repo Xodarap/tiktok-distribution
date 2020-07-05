@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TikTok Beautiful</title>
+    <title>TikTok Distribution</title>
 
     <!-- Bootstrap Core CSS -->
     
@@ -84,54 +84,14 @@
   <header>
   <div class="header-content">
     <div class="header-content-inner">
-      <h1>TikTok Beautiful</h1>
+      <h1>TikTok Follower Distribution</h1>
       <hr>
-      <p>TikTok has popularized the use of beauty identification algorithms. 
-      Want to know how one evaluates your facial appearance?</p>
+      <p>Where are you?</p>
 
       <div class="col-sm-5 center-input">
         <div class="panel panel-default">
           <div class="panel-body">
             <form id="ratingForm">
-              <div class="row justify-content-md-center">
-                <div class="col-sm-10 center-input">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">TikTok Username</label>
-                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
-                      placeholder="@charlidamelio" required>
-                    <small id="emailHelp" class="form-text">We use this to prevent spam</small>
-                    <div class="invalid-feedback" id="userError">
-                      Please provide a valid username.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-sm-10 center-input">
-                  <label for="exampleFormControlFile1">Headshot Photo</label>
-                  <input type="file" class="form-control-file" id="photo" accept="image/*;capture=camera">
-                  <div class="invalid-feedback" id="photoError">
-                    Please provide a valid photo.
-                  </div>
-                  <div class="invalid-feedback" id="dimensionError">
-                    Note: the algorithm works best with square images, showing only your face/neck.
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="center-input col-sm-10 preview-holder">
-                  <img id="preview" />
-                </div>
-              </div>
-              <div class="row">
-                <button type="submit" class="btn btn-primary btn-xl">Submit</button>
-              </div>
-              <div class="row">
-                <div class="loader-holder" id="loaderHolder">
-                  <div class="loader"></div>
-                </div>
-              </div>
 
               <div class="row">
                 <div class="center-input col-sm-10" id="resultsHolder">
@@ -139,7 +99,19 @@
                     <div class="panel-heading">
                       <h2 class="panel-title">Your TikTokBeautiful.com Results</h2>
                     </div>
-                    <div class="panel-body" id="resultText"></div>
+                    <div class="panel-body" id="plotHolder"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-md-center">
+                <div class="col-sm-10 center-input">
+                  <div class="form-group">
+                    <label for="followerCount">Follower Count</label>
+                    <input type="text" class="form-control" id="followerCount"
+                      placeholder="100" required>
+                    <div class="invalid-feedback" id="userError">
+                      Please provide a valid natural number.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -154,69 +126,6 @@
     </div>
   </div>
 </header>
-  <section class="bg-primary" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">More information</h2>
-                <hr class="light">
-                <p class="">This page uses the algorithm developed by 
-                    <a href="https://arxiv.org/pdf/1801.06345.pdf">Liang et al. (2018)</a>.
-                    Neither it nor the algorithm has any affiliation with TikTok or ByteDance.
-                </p>
-                <p>The algorithm works best with square headshot images. If you are getting weird results, 
-                    crop your image to be just a face and resize to 224x224 px.</p>
-                <p>We do not store any submitted images.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-  <section id="services">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Does this really work?</h2>
-                <hr class="primary">
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <div class="service-box">
-                    <p class="text-muted">The authors found that its results correlated well with human evaluators (rho = 0.90).</p>
-                    <p class="text-muted">But don't take it too seriously.</p>
-                    <p class="text-muted">Gal Godot, literally the most attractive woman
-                        alive according to FHM, scores at the 80th percentile.
-                    </p>
-                    <p class="text-muted">Also, Liang et al. trained their algorithm on only white and Asian faces.
-                        It probably does substantially worse at predicting the beauty of people of other races. e.g. Beyoncé is
-                        rated around the 70th percentile.
-                    </p>                    
-                    <p class="text-muted">Here are some example images they used:
-                    </p>                    
-                    <img src="img/SCUT-FBP5500.jpg" style="width: 100%;" />
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <aside class="bg-dark">
-      <div class="container text-center">
-          <div class="call-to-action">
-              <h2>How similar is this to what TikTok uses?</h2>
-              <p>TikTok's algorithm is proprietary, and we probably will never know exactly what it does.</p>
-              <p>I can tell you that this framework (ResNeXt-50) is an industry standard, and that
-                  the algorithm used here is the best public beauty DNN. 
-              </p>
-              <p>I would guess that TikTok uses a heavily modified version of this - I would particularly expect that
-                   they at least used a training set which includes non-white/Asian faces - but who knows. </p>
-          </div>
-      </div>
-  </aside>
-
   <section id="contact">
     <div class="container">
         <div class="row">
@@ -546,6 +455,7 @@
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/jquery.fittext.js"></script>
 <script src="js/wow.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="js/creative.js"></script>

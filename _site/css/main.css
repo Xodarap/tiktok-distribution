@@ -139,6 +139,6 @@ body { -webkit-tap-highlight-color: #222; }
 
 .invalid-feedback { width: 100%; margin-top: .25rem; font-size: 80%; color: #dc3545; display: none; }
 
-#resultsHolder { display: none; }
+#plotHolder { height: 280px; }
 
 /*# sourceMappingURL=main.css.map */

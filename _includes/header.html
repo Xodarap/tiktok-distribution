@@ -1,54 +1,14 @@
 <header>
   <div class="header-content">
     <div class="header-content-inner">
-      <h1>TikTok Beautiful</h1>
+      <h1>TikTok Follower Distribution</h1>
       <hr>
-      <p>TikTok has popularized the use of beauty identification algorithms. 
-      Want to know how one evaluates your facial appearance?</p>
+      <p>Where are you?</p>
 
       <div class="col-sm-5 center-input">
         <div class="panel panel-default">
           <div class="panel-body">
             <form id="ratingForm">
-              <div class="row justify-content-md-center">
-                <div class="col-sm-10 center-input">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">TikTok Username</label>
-                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
-                      placeholder="@charlidamelio" required>
-                    <small id="emailHelp" class="form-text">We use this to prevent spam</small>
-                    <div class="invalid-feedback" id="userError">
-                      Please provide a valid username.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-sm-10 center-input">
-                  <label for="exampleFormControlFile1">Headshot Photo</label>
-                  <input type="file" class="form-control-file" id="photo" accept="image/*;capture=camera">
-                  <div class="invalid-feedback" id="photoError">
-                    Please provide a valid photo.
-                  </div>
-                  <div class="invalid-feedback" id="dimensionError">
-                    Note: the algorithm works best with square images, showing only your face/neck.
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="center-input col-sm-10 preview-holder">
-                  <img id="preview" />
-                </div>
-              </div>
-              <div class="row">
-                <button type="submit" class="btn btn-primary btn-xl">Submit</button>
-              </div>
-              <div class="row">
-                <div class="loader-holder" id="loaderHolder">
-                  <div class="loader"></div>
-                </div>
-              </div>
 
               <div class="row">
                 <div class="center-input col-sm-10" id="resultsHolder">
@@ -56,7 +16,19 @@
                     <div class="panel-heading">
                       <h2 class="panel-title">Your TikTokBeautiful.com Results</h2>
                     </div>
-                    <div class="panel-body" id="resultText"></div>
+                    <div class="panel-body" id="plotHolder"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-md-center">
+                <div class="col-sm-10 center-input">
+                  <div class="form-group">
+                    <label for="followerCount">Follower Count</label>
+                    <input type="text" class="form-control" id="followerCount"
+                      placeholder="100" required>
+                    <div class="invalid-feedback" id="userError">
+                      Please provide a valid natural number.
+                    </div>
                   </div>
                 </div>
               </div>
