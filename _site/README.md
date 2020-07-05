@@ -1,6 +1,6 @@
-# Algorithmic beauty evaluation
+# TikTok Distribution
 
-Simple web front end for an algorithmic beauty evaluation API
+Simple web front end for TikTok follower count distribution
 
 Based on https://volny.github.io/creative-theme-jekyll/
 
