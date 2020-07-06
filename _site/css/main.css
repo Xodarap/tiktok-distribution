@@ -141,4 +141,6 @@ body { -webkit-tap-highlight-color: #222; }
 
 #plotHolder { height: 280px; }
 
+#resultTextHolder { display: none; }
+
 /*# sourceMappingURL=main.css.map */
