@@ -142,6 +142,15 @@
         
         Plotly.newPlot('plotHolder', data, layout, config);
     };
+
+    var doScroll = function() {
+        var resultTop = $('#resultsHolder').offset().top - 50;
+        if($(document).scrollTop() < resultTop) { return; }
+        $('html, body').stop().animate({
+            scrollTop: resultTop
+        }, 250, 'easeInOutExpo');
+    };
+
     updateChart();
     $('#followerCount').on('blur', function(){
         updateChart($(this).val())
@@ -149,6 +158,7 @@
     $('#followerForm').submit(function(event){
         event.preventDefault();
         $('#followerCount').blur();
+        doScroll();
     });
 
 })(jQuery); // End of use strict
