@@ -130,7 +130,7 @@
             yaxis: {
                 visible: true,
                 title: 'Follower Count',
-                type: 'log',
+                //type: 'log',
                 automargin: true,
                 showline: false,
                 fixedrange: true
