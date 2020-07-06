@@ -142,7 +142,7 @@
     });
     $('#followerForm').submit(function(event){
         event.preventDefault();
-        updateChart($('#followerCount').val())
+        $('#followerCount').blur();
     });
 
 })(jQuery); // End of use strict
