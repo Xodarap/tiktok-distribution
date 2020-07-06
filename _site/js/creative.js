@@ -124,14 +124,16 @@
             xaxis: {
                 visible: true,
                 title: 'Percentile',
-                automargin: true
+                automargin: true,
+                fixedrange: true
             },
             yaxis: {
                 visible: true,
                 title: 'Follower Count',
                 type: 'log',
                 automargin: true,
-                showline: false
+                showline: false,
+                fixedrange: true
             },
             annotations: annotations
         }
