@@ -130,7 +130,6 @@
             yaxis: {
                 visible: true,
                 title: 'Follower Count',
-                //type: 'log',
                 automargin: true,
                 showline: false,
                 fixedrange: true
@@ -159,6 +158,8 @@
     });
     $('#followerForm').submit(function(event){
         event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
         $('#followerCount').blur();
         doScroll();
     });
