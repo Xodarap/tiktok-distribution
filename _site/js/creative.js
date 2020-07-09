@@ -162,6 +162,7 @@
         event.stopImmediatePropagation();
         $('#followerCount').blur();
         doScroll();
+        return false;
     });
 
 })(jQuery); // End of use strict
