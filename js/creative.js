@@ -99,7 +99,7 @@
             var p = getPercentile(percentiles, followers);
             annotations = [{
                 x: p[0],
-                y: safeLog(p[1]),
+                y: p[1],
                 xref: 'x',
                 yref: 'y',
                 text: describePercentile(p[0]),
